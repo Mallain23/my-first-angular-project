@@ -1,0 +1,19 @@
+<label>Username</label>
+<input
+    type='text'
+    class='form-control'
+    [(ngModel)]='username'
+    >
+
+<h1>{{username}}</h1>
+<button
+    (click)='resetUsername()'
+    [disabled]='username === ""'> Reset Username</button>
+<br>
+<button
+    (click)='toggleVisability()'>
+    Display Details</button>
+<p *ngIf='display'>Secret password = tuna</p>
+<p [ngStyle]='{backgroundColor: index >= 5 ? "blue" : "transparent"}'
+    [ngClass]='{white: index >= 5}'
+    *ngFor='let log of logs; let index = index'>{{log}}</p>
